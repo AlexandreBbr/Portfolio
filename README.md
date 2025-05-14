@@ -6,14 +6,6 @@ Mon portfolio personnel, développé avec **React**, **Tailwind CSS** et **Frame
 
 ---
 
-## ✨ Aperçu
-
-![screenshot](./public/preview.png) <!-- (à remplacer si tu ajoutes une capture) -->
-
-Accédez au site ici 👉 [alexandrebbr.dev](https://alexandrebbr.dev)
-
----
-
 ## 🔧 Stack technique
 
 - ⚛️ [React](https://reactjs.org/)
