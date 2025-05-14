@@ -9,7 +9,7 @@ export default function Navbar({ activeSection }) {
   const { t } = useTranslation();
 
   const links = [
-    { id: "hero", label: t("navbar.home") },
+    { id: "hero", label: t("navbar.hero") },
     { id: "projects", label: t("navbar.projects") },
     { id: "contact", label: t("navbar.contact") },
   ];
