@@ -1,0 +1,46 @@
+{
+    "hero": {
+        "title": "Alexandre — Développeur Web & Logiciel",
+        "subtitle": "Je conçois des applications web modernes et des logiciels sur mesure, alliant performance, esthétique et fiabilité.",
+        "projectsBtn": "Voir mes projets",
+        "contactBtn": "Me contacter"
+    },
+    "projects": {
+        "title": "🚀 Mes Projets",
+        "tech": "Stack utilisée :",
+        "showMore": "Afficher plus",
+        "showLess": "Afficher moins",
+        "rtype": {
+            "short": "Un moteur de jeu multijoueur en C++ inspiré de R-Type, avec client graphique, serveur multithreadé et communication UDP.",
+            "full": "Développé dans le cadre d’un projet avancé en C++, R-Type est un moteur de jeu orienté architecture modulaire. Il inclut un serveur multithreadé en UDP, un client graphique utilisant SFML, et une communication réseau binaire. Le moteur suit une séparation stricte entre le rendu, la logique de jeu, le réseau et la physique. Le gameplay est inspiré du célèbre Shoot'em up R-Type, avec gestion de plusieurs joueurs, monstres, tirs et niveaux. Le protocole réseau est entièrement documenté et le projet respecte les normes d’accessibilité et de documentation professionnelle."
+        },
+        "gomoku": {
+            "short": "Un bot d’intelligence artificielle jouant à Gomoku avec un algorithme performant. Testé contre divers adversaires dans des tournois.",
+            "full": "Gomoku, ou \"Cinq en ligne\", est un jeu stratégique à deux joueurs sur un plateau 20x20. Ce projet consistait à développer une IA (nommée 'pbrain-gomoku-ai') capable de battre d'autres bots dans des parties chronométrées. L’algorithme pouvait reposer sur des stratégies classiques (min-max, Monte Carlo...) mais devait rester léger (70 Mo max) et réactif (5s max par coup). Le bot respecte un protocole de communication standard pour pouvoir s’affronter dans un environnement de compétition automatique. L’objectif était de reconnaître des opportunités de victoire, bloquer l’adversaire, et gérer des situations complexes sur le goban. Le code devait compiler sous Linux avec un Makefile strict, sans bibliothèques externes."
+        },
+        "raytracer": {
+            "short": "Moteur de rendu basé sur le ray tracing pour générer des images réalistes en C++.",
+            "full": "Ce projet implémente un raytracer en C++ qui génère des images réalistes à partir d’un fichier de scène. Il supporte les primitives (sphère, plan, cylindre…), les transformations (translation, rotation), les lumières directionnelles et ambiantes, et les matériaux simples. Le rendu s’effectue sans interface graphique via des fichiers PPM. L’architecture est extensible grâce à des plugins dynamiques (.so) et repose sur des patrons de conception comme Factory ou Builder. Fonctionnalités avancées : multithreading, textures procédurales (bruit de Perlin, échiquier), antialiasing, réflexion, transparence, .OBJ loader et rendu interactif."
+        },
+        "zappy": {
+            "short": "Un jeu en réseau multijoueur en C/C++ où plusieurs équipes s'affrontent sur une carte en quête de ressources et d'évolution",
+            "full": "Zappy est un projet de jeu en réseau comprenant trois programmes : un serveur en C, une interface graphique en C++ et une IA autonome. Les joueurs, incarnés par des clients IA, évoluent sur une carte torique en collectant des ressources et en accomplissant des rituels d'incantation pour monter en niveau. La première équipe à atteindre six joueurs au niveau maximal remporte la partie. Le serveur gère la génération du monde, les règles de montée en niveau, la reproduction des joueurs, ainsi que les interactions entre clients. Une interface graphique permet de visualiser l'ensemble des événements en temps réel."
+        },
+        "pulsar": {
+            "short": "Un moteur de jeu modulaire en C++ basé sur Vulkan, avec un langage de script en Rust et un éditeur visuel en C# pour jeux 2D/2.5D.",
+            "full": "Pulsar est un moteur de jeu modulaire développé en C++ avec l’API graphique Vulkan, conçu pour afficher efficacement des scènes 2D et 2.5D. Il s’intègre avec Neutron, un langage de script personnalisé écrit en Rust, rendant le développement de jeux à la fois accessible et expressif. Le moteur est accompagné d’un éditeur visuel en C# permettant de construire des scènes, gérer les assets et connecter les scripts de manière intuitive. Pulsar vise à offrir un environnement de développement moderne et pédagogique, avec rendu accéléré par GPU et compatibilité multiplateforme. Les dépôts de l’éditeur, du moteur et du langage sont publics mais pas encore open source, car le projet est toujours en développement."
+        }
+    },
+    "contact": {
+        "title": "📬 Contact",
+        "text": "N'hésitez pas à me contacter ou à jeter un oeil à mes profils :"
+    },
+    "navbar": {
+        "hero": "Accueil",
+        "projects": "Projets",
+        "contact": "Contact"
+    },
+    "footer": {
+        "text": "Tous droits réservés."
+    }
+}

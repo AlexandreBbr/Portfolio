@@ -1,0 +1,47 @@
+{
+    "hero": {
+        "title": "Alexandre — Web & Software Developer",
+        "subtitle": "I design modern web applications and custom software, combining performance, aesthetics and reliability.",
+        "projectsBtn": "See my projects",
+        "contactBtn": "Contact me"
+    },
+    "projects": {
+        "title": "🚀 My Projects",
+        "tech": "Tech Stack:",
+        "showMore": "Show more",
+        "showLess": "Show less",
+        "rtype": {
+            "short": "A C++ multiplayer game engine inspired by R-Type, with a multithreaded server, graphical client and UDP communication.",
+            "full": "Built as part of an advanced C++ project, R-Type is a modular game engine featuring a multithreaded UDP server, a graphical client using SFML, and binary network communication. The engine enforces separation of concerns between rendering, game logic, networking, and physics. The gameplay draws inspiration from the classic R-Type shoot'em up, with support for multiple players, enemies, projectiles and levels. The network protocol is fully documented and the project follows strong accessibility and documentation standards."
+        },
+        "gomoku": {
+            "short": "An artificial intelligence bot for Gomoku using a performant algorithm. Tested against various opponents in tournament settings.",
+            "full": "Gomoku, also known as \"Five in a Row\", is a two-player strategy game played on a 20x20 board. This project aimed to develop an AI ('pbrain-gomoku-ai') capable of defeating other bots in timed matches. The algorithm could use standard techniques such as Minimax or Monte Carlo, but had to remain lightweight (70MB max) and responsive (5s max per move). The bot follows a standardized communication protocol to compete in automated tournament environments. The goal was to detect winning opportunities, block the opponent, and handle complex board states. The code was required to compile on Linux using a strict Makefile and no external libraries."
+        },
+        "raytracer": {
+            "short": "Raytracing engine to render realistic images using C++.",
+            "full": "This project implements a C++ raytracer that generates realistic images from a scene file. It supports primitives (sphere, plane, cylinder…), transformations (translation, rotation), directional and ambient lights, and flat materials. The render is done headlessly to PPM files. The architecture is plugin-based (.so) and uses design patterns like Factory and Builder. Advanced features: multithreading, procedural textures (Perlin noise, checkers), antialiasing, reflection, transparency, .OBJ loader, and live preview."
+        },
+        "zappy": {
+            "short": "A multiplayer network game in C/C++ where teams compete on a resource-filled map and try to evolve their players.",
+            "full": "Zappy is a multiplayer network game composed of three binaries: a server in C, a graphical interface in C++, and an autonomous AI client. Players (controlled by AIs) roam a toroidal map, gather resources, and perform elevation rituals to level up. The goal is for a team to reach six players at the maximum level. The server handles world generation, elevation logic, player reproduction, and client interactions. A graphical client lets you observe all in-game events in real time."
+        },
+        "pulsar": {
+    "short": "A modular C++ game engine using Vulkan, with a custom Rust scripting language and a C# visual editor tailored for 2D and 2.5D games.",
+    "full": "Pulsar is a custom modular game engine built in C++ using the Vulkan graphics API, designed to render performant 2D and 2.5D scenes. It integrates seamlessly with a bespoke scripting language called Neutron (written in Rust), making game development accessible and expressive. The engine is paired with a visual editor developed in C# to allow intuitive scene building, asset management, and scripting integration. Pulsar emphasizes beginner-friendly game development while retaining modern capabilities like GPU-accelerated rendering and cross-platform support. The repositories for the engine, editor, and language are public but currently closed-source as development is ongoing."
+}
+
+    },
+    "contact": {
+        "title": "📬 Contact",
+        "text": "Feel free to reach out or check out my profiles:"
+    },
+    "navbar": {
+        "hero": "Home",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "footer": {
+        "text": "All rights reserved."
+    }
+}
