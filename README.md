@@ -29,7 +29,7 @@ Mon portfolio personnel, développé avec **React**, **Tailwind CSS** et **Frame
 ## 🚀 Lancer le projet localement
 
 ```bash
-git clone https://github.com/tonprofil/portfolio.git
+git clone https://github.com/AlexandreBbr/Portfolio.git
 cd portfolio
 npm install
 npm start
