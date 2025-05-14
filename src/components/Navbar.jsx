@@ -2,13 +2,14 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 export default function Navbar({ activeSection }) {
   const [isOpen, setIsOpen] = useState(false);
   const { t } = useTranslation();
 
   const links = [
-    { id: "hero", label: t("navbar.hero") },
+    { id: "hero", label: t("navbar.home") },
     { id: "projects", label: t("navbar.projects") },
     { id: "contact", label: t("navbar.contact") },
   ];
@@ -26,18 +27,20 @@ export default function Navbar({ activeSection }) {
       <nav className="max-w-5xl mx-auto flex items-center justify-between p-4">
         <h1 className="text-lg font-bold text-indigo-400">Alexandre</h1>
 
-        <ul className="hidden md:flex gap-8 text-sm text-gray-300">
+        <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
           {links.map(({ id, label }) => (
-            <li
+            <span
               key={id}
               onClick={() => scrollTo(id)}
-              className={`cursor-pointer hover:text-indigo-400 transition ${activeSection === id ? "text-indigo-400 font-semibold" : ""
-                }`}
+              className={`cursor-pointer hover:text-indigo-400 transition ${
+                activeSection === id ? "text-indigo-400 font-semibold" : ""
+              }`}
             >
               {label}
-            </li>
+            </span>
           ))}
-        </ul>
+          <LanguageSwitcher />
+        </div>
 
         <button
           className="md:hidden text-gray-300"
@@ -62,12 +65,17 @@ export default function Navbar({ activeSection }) {
               <li
                 key={id}
                 onClick={() => scrollTo(id)}
-                className={`cursor-pointer hover:text-indigo-400 transition ${activeSection === id ? "text-indigo-400 font-semibold" : ""
-                  }`}
+                className={`cursor-pointer hover:text-indigo-400 transition ${
+                  activeSection === id ? "text-indigo-400 font-semibold" : ""
+                }`}
               >
                 {label}
               </li>
             ))}
+
+            <li className="pt-4 border-t border-gray-800">
+              <LanguageSwitcher />
+            </li>
           </motion.ul>
         )}
       </AnimatePresence>
