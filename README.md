@@ -33,19 +33,3 @@ git clone https://github.com/tonprofil/portfolio.git
 cd portfolio
 npm install
 npm start
-
----
-
-📄 Licence
-
-Code sous licence MIT
-
----
-
-🤝 Me contacter
-
-    🌐 alexandrebbr.dev
-
-    💼 LinkedIn
-
-    🐙 GitHub
