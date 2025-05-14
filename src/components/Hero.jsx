@@ -1,9 +1,11 @@
 import { motion } from "framer-motion";
 import SectionWrapper from "./SectionWrapper";
 import { useTranslation } from "react-i18next";
+import useIsMobile from "../hooks/useIsMobile";
 
 export default function Hero() {
   const { t } = useTranslation();
+  const isMobile = useIsMobile();
 
   return (
     <SectionWrapper
@@ -12,9 +14,9 @@ export default function Hero() {
     >
       <motion.div
         className="text-center space-y-6"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        initial={!isMobile ? { opacity: 0, y: 40 } : false}
+        animate={!isMobile ? { opacity: 1, y: 0 } : false}
+        transition={!isMobile ? { duration: 0.6, ease: "easeOut" } : {}}
       >
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight">
           {t("hero.title")}

@@ -7,6 +7,7 @@ import {
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { ChevronDown } from "lucide-react";
+import useIsMobile from "../hooks/useIsMobile";
 
 const techIcons = {
     React: <SiReact className="text-cyan-400" />,
@@ -25,6 +26,7 @@ const techIcons = {
 export default function ProjectCard({ proj, delay }) {
     const [isExpanded, setIsExpanded] = useState(false);
     const { t } = useTranslation();
+    const isMobile = useIsMobile();
 
     return (
         <motion.div
@@ -50,10 +52,10 @@ export default function ProjectCard({ proj, delay }) {
             <AnimatePresence initial={false}>
                 <motion.div
                     key={isExpanded ? "expanded" : "collapsed"}
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.4 }}
+                    initial={!isMobile ? { opacity: 0, height: 0 } : false}
+                    animate={!isMobile ? { opacity: 1, height: "auto" } : false}
+                    exit={!isMobile ? { opacity: 0, height: 0 } : false}
+                    transition={!isMobile ? { duration: 0.4 } : {}}
                     className="overflow-hidden"
                 >
                     <p className="text-gray-400 mt-2 text-sm whitespace-pre-line">
@@ -70,9 +72,6 @@ export default function ProjectCard({ proj, delay }) {
                                 <motion.span
                                     key={idx}
                                     className="flex items-center gap-2 px-3 py-1 text-sm rounded-full bg-indigo-600/20 text-indigo-300 border border-indigo-500"
-                                    initial={{ opacity: 0, y: 10 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    transition={{ duration: 0.3, delay: idx * 0.05 }}
                                 >
                                     {techIcons[tech] || null}
                                     {tech}
