@@ -14,6 +14,15 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { t } = useTranslation();
 
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.console) {
+      console.log(
+        "%c💌 Ce message est destiné à celle qui partage ma vie, je t'aime plus que tout, merci de toujours me tirer vers le haut. -A",
+        "color: pink; font-size: 16px; font-style: italic;"
+      );
+    }
+  }, []);  
+
   const projects = [
     {
       title: "Pulsar (Work in Progress)",
