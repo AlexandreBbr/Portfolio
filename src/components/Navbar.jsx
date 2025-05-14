@@ -25,7 +25,7 @@ export default function Navbar({ activeSection }) {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gray-950/90 backdrop-blur-sm border-b border-gray-800">
       <nav className="max-w-5xl mx-auto flex items-center justify-between p-4">
-        <h1 className="text-lg font-bold text-indigo-400">Alexandre</h1>
+        <h1 className="text-lg font-bold text-indigo-400">Alexandre B.</h1>
 
         <div className="hidden md:flex items-center gap-8 text-sm text-gray-300">
           {links.map(({ id, label }) => (
