@@ -27,10 +27,9 @@
             "full": "Zappy is a multiplayer network game composed of three binaries: a server in C, a graphical interface in C++, and an autonomous AI client. Players (controlled by AIs) roam a toroidal map, gather resources, and perform elevation rituals to level up. The goal is for a team to reach six players at the maximum level. The server handles world generation, elevation logic, player reproduction, and client interactions. A graphical client lets you observe all in-game events in real time."
         },
         "pulsar": {
-    "short": "A modular C++ game engine using Vulkan, with a custom Rust scripting language and a C# visual editor tailored for 2D and 2.5D games.",
-    "full": "Pulsar is a custom modular game engine built in C++ using the Vulkan graphics API, designed to render performant 2D and 2.5D scenes. It integrates seamlessly with a bespoke scripting language called Neutron (written in Rust), making game development accessible and expressive. The engine is paired with a visual editor developed in C# to allow intuitive scene building, asset management, and scripting integration. Pulsar emphasizes beginner-friendly game development while retaining modern capabilities like GPU-accelerated rendering and cross-platform support. The repositories for the engine, editor, and language are public but currently closed-source as development is ongoing."
-}
-
+            "short": "A modular C++ game engine using Vulkan, with a custom Rust scripting language and a C# visual editor tailored for 2D and 2.5D games.",
+            "full": "Pulsar is a custom modular game engine built in C++ using the Vulkan graphics API, designed to render performant 2D and 2.5D scenes. It integrates seamlessly with a bespoke scripting language called Neutron (written in Rust), making game development accessible and expressive. The engine is paired with a visual editor developed in C# to allow intuitive scene building, asset management, and scripting integration. Pulsar emphasizes beginner-friendly game development while retaining modern capabilities like GPU-accelerated rendering and cross-platform support. The repositories for the engine, editor, and language are public but currently closed-source as development is ongoing."
+        }
     },
     "contact": {
         "title": "📬 Contact",
