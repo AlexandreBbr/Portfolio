@@ -30,6 +30,6 @@ Mon portfolio personnel, développé avec **React**, **Tailwind CSS** et **Frame
 
 ```bash
 git clone https://github.com/AlexandreBbr/Portfolio.git
-cd portfolio
+cd Portfolio
 npm install
-npm start
+npm run dev

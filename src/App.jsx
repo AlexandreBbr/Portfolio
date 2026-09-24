@@ -1,13 +1,16 @@
-import "./index.css";
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 
 import Hero from "./components/Hero";
+import About from "./components/About";
+import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
 import Parallax from "./components/Parallax";
+
+import { SECTIONS } from "./data/profile";
 
 function App() {
   const [activeSection, setActiveSection] = useState("hero");
@@ -21,69 +24,28 @@ function App() {
         "color: pink; font-size: 16px; font-style: italic;"
       );
     }
-  }, []);  
-
-  const projects = [
-    {
-      title: "Pulsar (Work in Progress)",
-      description: t("projects.pulsar.short"),
-      fullDescription: t("projects.pulsar.full"),
-      techs: ["C++", "C#", "Rust", "Vulkan"],
-    },  
-    {
-      title: "R-Type",
-      description: t("projects.rtype.short"),
-      fullDescription: t("projects.rtype.full"),
-      techs: ["C++", "SFML", "UDP", "CMake"],
-      github: "https://github.com/AlexandreBbr/rtype"
-    },
-    {
-      title: "Zappy",
-      description: t("projects.zappy.short"),
-      fullDescription: t("projects.zappy.full"),
-      techs: ["C", "C++", "Python", "Sockets", "Multithreading"],
-      github: "https://github.com/AlexandreBbr/zappy"
-    },
-    {
-      title: "Gomoku",
-      description: t("projects.gomoku.short"),
-      fullDescription: t("projects.gomoku.full"),
-      techs: ["Python"],
-      github: "https://github.com/AlexandreBbr/gomoku-ai"
-    },
-    {
-      title: "Raytracer",
-      description: t("projects.raytracer.short"),
-      fullDescription: t("projects.raytracer.full"),
-      techs: ["C++", "SFML", "libconfig++", "Multithreading"],
-      github: "https://github.com/AlexandreBbr/raytracer"
-    }
-  ];
-
-  useEffect(() => {
-    const handleScroll = () => setShowScrollTop(window.scrollY > 300);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    const sections = ["hero", "projects", "contact"];
-    const handleScrollSpy = () => {
+    const handleScroll = () => {
+      setShowScrollTop(window.scrollY > 300);
+
       const scrollPosition = window.scrollY + window.innerHeight / 2;
-      for (let id of sections) {
+      for (const id of SECTIONS) {
         const section = document.getElementById(id);
-        if (section) {
-          const offsetTop = section.offsetTop;
-          const offsetHeight = section.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(id);
-            break;
-          }
+        if (
+          section &&
+          scrollPosition >= section.offsetTop &&
+          scrollPosition < section.offsetTop + section.offsetHeight
+        ) {
+          setActiveSection(id);
+          break;
         }
       }
     };
-    window.addEventListener("scroll", handleScrollSpy);
-    return () => window.removeEventListener("scroll", handleScrollSpy);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -93,31 +55,42 @@ function App() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-gray-950 text-white font-sans scroll-smooth overflow-hidden">
+    <div className="relative min-h-screen bg-gray-950 text-white font-sans overflow-hidden">
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:px-4 focus:py-2 focus:rounded-full focus:bg-indigo-500 focus:text-white"
+      >
+        {t("a11y.skip")}
+      </a>
       <Parallax />
-      <main className="relative z-10">
-        <Navbar activeSection={activeSection} />
+      <Navbar activeSection={activeSection} />
+      <main id="main" className="relative z-10">
         <Hero />
-        <Projects projects={projects} />
+        <About />
+        <Skills />
+        <Projects />
         <Contact />
-        <footer className="text-center text-gray-500 text-sm py-10">
-          © {new Date().getFullYear()} Barbier. {t("footer.text")}
-        </footer>
       </main>
+      <footer className="relative z-10 text-center text-gray-500 text-sm py-10">
+        © {new Date().getFullYear()} Alexandre Barbier. {t("footer.text")}
+      </footer>
 
-      {showScrollTop && (
-        <motion.button
-          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-xl hover:bg-indigo-600 transition-colors duration-300 z-50"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          aria-label="Retour en haut"
-        >
-          <span className="text-xl font-bold">↑</span>
-        </motion.button>
-      )}
+      <AnimatePresence>
+        {showScrollTop && (
+          <m.button
+            key="scroll-top"
+            onClick={() => window.scrollTo({ top: 0 })}
+            className="fixed bottom-6 right-6 w-12 h-12 rounded-full bg-indigo-500 text-white flex items-center justify-center shadow-xl hover:bg-indigo-600 transition-colors duration-300 z-50"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+            aria-label={t("a11y.backToTop")}
+          >
+            <span className="text-xl font-bold" aria-hidden="true">↑</span>
+          </m.button>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

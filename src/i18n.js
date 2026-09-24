@@ -13,10 +13,20 @@ i18n
       en: { translation: en },
       fr: { translation: fr }
     },
+    supportedLngs: ["fr", "en"],
+    nonExplicitSupportedLngs: true,
+    load: "languageOnly",
     fallbackLng: "fr",
     interpolation: {
       escapeValue: false
     }
   });
+
+const syncHtmlLang = (lng) => {
+  document.documentElement.lang = i18n.resolvedLanguage || lng;
+  document.title = i18n.t("meta.title");
+};
+syncHtmlLang(i18n.language);
+i18n.on("languageChanged", syncHtmlLang);
 
 export default i18n;
