@@ -1,35 +1,22 @@
-# 💼 Portfolio — Alexandre Barbier
+# Portfolio
 
-Mon portfolio personnel, développé avec **React**, **Tailwind CSS** et **Framer Motion**, pour présenter mes projets web et logiciels dans une interface moderne, animée et fluide.
+Mon portfolio, en ligne sur [alexandrebbr.com](https://www.alexandrebbr.com/).
 
-> ⚡ Multilingue (FR / EN) • Responsive • Effets de scroll animés • Fond parallax • Stack technique dynamique
+Développé avec React, Tailwind CSS, Framer Motion et i18next.
 
----
+## Fonctionnalités
 
-## 🔧 Stack technique
+- Sections À propos, Expérience, Projets, Compétences et Contact
+- Projets séparés entre projets professionnels et scolaires et projets personnels
+- Site bilingue français / anglais
+- Responsive, navigation au clavier, animations désactivées si `prefers-reduced-motion`
+- Contenu centralisé dans `src/data/profile.js` et `src/locales/`
 
-- ⚛️ [React](https://reactjs.org/)
-- 🎨 [Tailwind CSS](https://tailwindcss.com/)
-- 🎞 [Framer Motion](https://www.framer.com/motion/)
-- 🌐 [i18next](https://www.i18next.com/) pour la gestion multilingue
-
----
-
-## 📂 Fonctionnalités
-
-- Hero animé avec scroll fluide vers les sections
-- Projets présentés avec badges techniques + icônes
-- Fond animé parallax avec `Framer Motion`
-- Switch FR / EN avec `i18next`
-- Navbar sticky avec highlight actif
-- Responsive design
-
----
-
-## 🚀 Lancer le projet localement
+## Lancer le projet
 
 ```bash
 git clone https://github.com/AlexandreBbr/Portfolio.git
 cd Portfolio
 npm install
 npm run dev
+```

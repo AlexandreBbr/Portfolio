@@ -19,18 +19,23 @@ export default function ProjectCard({ proj, delay }) {
       transition={{ duration: 0.5, delay }}
     >
       {proj.image && (
-        <img
-          src={proj.image}
-          alt=""
-          loading="lazy"
-          decoding="async"
-          className="w-full aspect-video object-cover border-b border-gray-800"
-        />
+        <figure className="relative border-b border-gray-800">
+          <img
+            src={proj.image}
+            alt={t(`projects.${proj.id}.imageCaption`)}
+            loading="lazy"
+            decoding="async"
+            className="w-full aspect-video object-cover"
+          />
+          <figcaption className="absolute bottom-2 right-2 px-2 py-0.5 text-[11px] rounded bg-gray-950/75 text-gray-300 backdrop-blur-sm">
+            {t(`projects.${proj.id}.imageCaption`)}
+          </figcaption>
+        </figure>
       )}
 
       <div className="flex flex-col flex-1 p-6">
         <div className="flex items-center gap-3 flex-wrap">
-          <h3 className="text-xl font-bold text-indigo-400">{proj.title}</h3>
+          <h4 className="text-xl font-bold text-indigo-400">{proj.title}</h4>
           {proj.wip && (
             <span className="px-2 py-0.5 text-xs rounded-full bg-amber-500/15 text-amber-300 border border-amber-500/40">
               {t("projects.wip")}
@@ -96,7 +101,7 @@ export default function ProjectCard({ proj, delay }) {
           ) : (
             <span className="inline-flex items-center gap-2 text-sm text-gray-500">
               <Lock className="w-4 h-4" aria-hidden="true" />
-              {t("projects.private")}
+              {t(proj.proprietary ? "projects.proprietary" : "projects.private")}
             </span>
           )}
           <button

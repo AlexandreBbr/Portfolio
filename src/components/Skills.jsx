@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { Code2, Cpu, Network, Wrench } from "lucide-react";
+import { Atom, Code2, Cpu, Database, Globe } from "lucide-react";
 import SectionWrapper, { SectionTitle } from "./SectionWrapper";
 import TechIcon from "./TechIcon";
 import { SKILLS } from "../data/profile";
 
-const groupIcons = { languages: Code2, graphics: Cpu, systems: Network, tools: Wrench };
+const groupIcons = { languages: Code2, web: Globe, data: Database, systems: Cpu, quantum: Atom };
 
 export default function Skills() {
   const { t } = useTranslation();
@@ -13,10 +13,14 @@ export default function Skills() {
     <SectionWrapper id="skills" className="px-4 py-20">
       <SectionTitle>{t("skills.title")}</SectionTitle>
       <div className="grid gap-6 sm:grid-cols-2">
-        {SKILLS.map(({ key, items }) => {
+        {SKILLS.map(({ key, items }, i) => {
           const Icon = groupIcons[key];
+          const fullRow = SKILLS.length % 2 === 1 && i === SKILLS.length - 1;
           return (
-            <div key={key} className="bg-gray-900/80 p-6 rounded-xl border border-gray-800">
+            <div
+              key={key}
+              className={`bg-gray-900/80 p-6 rounded-xl border border-gray-800 ${fullRow ? "sm:col-span-2" : ""}`}
+            >
               <h3 className="flex items-center gap-2 text-lg font-semibold text-indigo-300 mb-4">
                 <Icon className="w-5 h-5" aria-hidden="true" />
                 {t(`skills.${key}`)}

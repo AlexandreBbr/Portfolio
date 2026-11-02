@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 
 import Hero from "./components/Hero";
 import About from "./components/About";
+import Experience from "./components/Experience";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
@@ -16,15 +17,6 @@ function App() {
   const [activeSection, setActiveSection] = useState("hero");
   const [showScrollTop, setShowScrollTop] = useState(false);
   const { t } = useTranslation();
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && window.console) {
-      console.log(
-        "%c💌 Ce message est destiné à celle qui partage ma vie, je t'aime plus que tout, merci de toujours me tirer vers le haut. -A",
-        "color: pink; font-size: 16px; font-style: italic;"
-      );
-    }
-  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -67,12 +59,13 @@ function App() {
       <main id="main" className="relative z-10">
         <Hero />
         <About />
-        <Skills />
+        <Experience />
         <Projects />
+        <Skills />
         <Contact />
       </main>
       <footer className="relative z-10 text-center text-gray-500 text-sm py-10">
-        © {new Date().getFullYear()} Alexandre Barbier. {t("footer.text")}
+        © {new Date().getFullYear()} Alexandre B. {t("footer.text")}
       </footer>
 
       <AnimatePresence>

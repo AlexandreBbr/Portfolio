@@ -1,6 +1,6 @@
 {
     "meta": {
-        "title": "Alexandre Barbier · Développeur logiciel C++ / Rust"
+        "title": "Alexandre B. · Développeur logiciel et web"
     },
     "a11y": {
         "skip": "Aller au contenu",
@@ -10,111 +10,163 @@
         "home": "Retour à l'accueil"
     },
     "hero": {
-        "title": "Je construis des logiciels qui tournent vite, du moteur au pixel.",
-        "subtitle": "Moteurs de jeu, rendu graphique Vulkan, ray tracing, réseau multijoueur et programmation concurrente, en C++ et en Rust.",
+        "title": "Du code bas niveau aux applications en production.",
+        "subtitle": "Applications web et mobiles, sécurité et administration de serveurs, avec des bases solides en C, C++ et Rust.",
         "projectsBtn": "Voir mes projets",
         "contactBtn": "Me contacter",
-        "kicker": "Développeur logiciel",
-        "stats": {
-            "projects": "projets présentés",
-            "languages": "langages utilisés",
-            "focus": "orienté performance"
-        }
+        "kicker": "Développeur logiciel et web"
     },
     "projects": {
         "title": "Projets",
         "showMore": "Détails",
         "showLess": "Masquer les détails",
-        "rtype": {
-            "short": "Moteur de jeu multijoueur en C++ inspiré de R-Type, avec serveur multithreadé et communication UDP.",
-            "full": "Développé dans le cadre d’un projet avancé en C++, R-Type est un moteur de jeu orienté architecture modulaire. Il inclut un serveur multithreadé en UDP, un client graphique utilisant SFML, et une communication réseau binaire. Le moteur suit une séparation stricte entre le rendu, la logique de jeu, le réseau et la physique. Le gameplay est inspiré du célèbre Shoot'em up R-Type, avec gestion de plusieurs joueurs, monstres, tirs et niveaux. Le protocole réseau est entièrement documenté et le projet respecte les normes d’accessibilité et de documentation professionnelle.",
+        "pulsar": {
+            "short": "Neutron, le langage de script du moteur de jeu Pulsar : j'en ai conçu toute la chaîne, du lexer à l'interpréteur, en Rust.",
+            "full": "Pulsar est le moteur de jeu développé pour notre projet de fin d'études à Epitech. J'étais responsable de Neutron, son langage de script, écrit en Rust : analyse lexicale, parseur et arbre syntaxique, analyse sémantique avec typage statique, gestion des portées et table des symboles, puis interpréteur. Chaque étape de la chaîne est couverte par des tests unitaires et d'intégration.",
             "highlights": [
-                "Serveur multithreadé communiquant en UDP",
-                "Protocole réseau binaire entièrement documenté",
-                "Architecture modulaire : rendu, logique, réseau et physique séparés",
-                "Client graphique SFML jouable à plusieurs"
-            ]
+                "Lexer, parseur et arbre syntaxique (AST)",
+                "Analyse sémantique : typage statique, portées, table des symboles",
+                "Interpréteur du langage",
+                "Tests unitaires et d'intégration à chaque étape"
+            ],
+            "imageCaption": "Extrait d'un programme Neutron"
         },
-        "gomoku": {
-            "short": "Bot d’intelligence artificielle jouant au Gomoku, conçu pour affronter d’autres IA en tournoi automatique.",
-            "full": "Gomoku, ou \"Cinq en ligne\", est un jeu stratégique à deux joueurs sur un plateau 20x20. Ce projet consistait à développer une IA (nommée 'pbrain-gomoku-ai') capable de battre d'autres bots dans des parties chronométrées. L’algorithme pouvait reposer sur des stratégies classiques (min-max, Monte Carlo...) mais devait rester léger (70 Mo max) et réactif (5s max par coup). Le bot respecte un protocole de communication standard pour pouvoir s’affronter dans un environnement de compétition automatique. L’objectif était de reconnaître des opportunités de victoire, bloquer l’adversaire, et gérer des situations complexes sur le goban. Le code devait compiler sous Linux avec un Makefile strict, sans bibliothèques externes.",
+        "subtitle": "Une application en production, des projets d'école et des projets personnels en informatique quantique.",
+        "private": "Dépôt privé",
+        "code": "Code source",
+        "proprietary": "Code propriétaire",
+        "kiwanis": {
+            "short": "Application mobile et web réservée aux membres des clubs Kiwanis, publiée sur Google Play.",
+            "full": "Mon Kiwanis rassemble la vie d'un club dans une seule application : agenda des événements avec suivi des présences, sondages, fil d'actualité, suivi des campagnes de financement et annuaire des membres. Je l'ai conçue et développée de bout en bout, de l'application mobile en TypeScript avec Expo jusqu'à l'API, puis publiée sur Google Play et en version web.",
             "highlights": [
-                "Décision en moins de 5 secondes par coup",
-                "Empreinte mémoire limitée à 70 Mo",
-                "Protocole de communication standard des tournois de bots",
-                "Aucune bibliothèque externe"
-            ]
+                "Conçue et développée de bout en bout",
+                "Événements et présences, sondages, fil social, annuaire",
+                "Suivi des campagnes de financement",
+                "Publiée sur Google Play et en version web"
+            ],
+            "imageCaption": "Captures de l'application"
         },
-        "raytracer": {
-            "short": "Moteur de rendu par ray tracing en C++ qui génère des images réalistes à partir d’un fichier de scène.",
-            "full": "Ce projet implémente un raytracer en C++ qui génère des images réalistes à partir d’un fichier de scène. Il supporte les primitives (sphère, plan, cylindre…), les transformations (translation, rotation), les lumières directionnelles et ambiantes, et les matériaux simples. Le rendu s’effectue sans interface graphique via des fichiers PPM. L’architecture est extensible grâce à des plugins dynamiques (.so) et repose sur des patrons de conception comme Factory ou Builder. Fonctionnalités avancées : multithreading, textures procédurales (bruit de Perlin, échiquier), antialiasing, réflexion, transparence, .OBJ loader et rendu interactif.",
+        "qsim": {
+            "short": "Simulateur de circuits quantiques écrit de zéro en Python, vérifié contre Qiskit et aussi rapide que qiskit-aer à 1,3x près.",
+            "full": "qsim simule des circuits quantiques avec deux moteurs : un vecteur d'état, où les portes s'appliquent sans jamais construire de matrice géante, et une matrice densité qui modélise le bruit (dépolarisation, amortissement, relaxation T1/T2, erreurs de lecture). Les noyaux de calcul compilés avec Numba mettent l'état à jour sur place, en parallèle, et restent à 1,2-1,3x de qiskit-aer, le simulateur C++ de référence. Le projet lit et écrit l'OpenQASM 2 et gère la mesure en cours de circuit. 108 tests comparent chaque moteur à Qiskit sur des circuits aléatoires.",
             "highlights": [
-                "Rendu multithreadé avec antialiasing",
-                "Réflexion, transparence et textures procédurales (bruit de Perlin)",
-                "Primitives extensibles par plugins dynamiques (.so)",
-                "Chargement de modèles .OBJ, patrons Factory et Builder"
-            ]
+                "Moteurs vecteur d'état et matrice densité avec modèles de bruit",
+                "Noyaux Numba parallèles, à 1,2-1,3x de qiskit-aer",
+                "Parseur et exporteur OpenQASM 2, mesure en cours de circuit",
+                "108 tests de validation croisée avec Qiskit, CI"
+            ],
+            "imageCaption": "Temps de simulation face à Qiskit"
+        },
+        "qalgo": {
+            "short": "Benchmark d'algorithmes quantiques classiques sur des modèles de bruit de trois processeurs IBM : que reste-t-il du résultat idéal ?",
+            "full": "Ce projet exécute Deutsch-Jozsa, Bernstein-Vazirani, Grover, l'estimation de phase et la préparation d'états GHZ à des tailles croissantes, sur un simulateur idéal puis avec le bruit, les portes natives et la connectivité de trois processeurs IBM (Sherbrooke, Torino, Fez). Il mesure l'écart avec le résultat idéal et montre que la fidélité dépend surtout du nombre de portes à deux qubits après compilation, avec une erreur effective par porte estimée pour chaque processeur. Un script permet de lancer la même suite sur du vrai matériel IBM.",
+            "highlights": [
+                "5 algorithmes sur 3 processeurs IBM simulés",
+                "Fidélité modélisée selon le nombre de portes à deux qubits",
+                "Impact des réglages du transpileur et du placement sur la puce",
+                "Résultats et graphiques documentés dans le README"
+            ],
+            "imageCaption": "Fidélité selon le nombre de portes à deux qubits"
+        },
+        "groups": {
+            "pro": "Projets professionnels et scolaires",
+            "perso": "Projets personnels"
         },
         "zappy": {
-            "short": "Jeu en réseau où des équipes d’IA s’affrontent sur une carte torique pour collecter des ressources et évoluer.",
-            "full": "Zappy est un projet de jeu en réseau comprenant trois programmes : un serveur en C, une interface graphique en C++ et une IA autonome. Les joueurs, incarnés par des clients IA, évoluent sur une carte torique en collectant des ressources et en accomplissant des rituels d'incantation pour monter en niveau. La première équipe à atteindre six joueurs au niveau maximal remporte la partie. Le serveur gère la génération du monde, les règles de montée en niveau, la reproduction des joueurs, ainsi que les interactions entre clients. Une interface graphique permet de visualiser l'ensemble des événements en temps réel.",
+            "short": "Jeu en réseau où des équipes d'IA s'affrontent sur une carte torique. J'ai développé le client IA et la liaison réseau de l'interface graphique.",
+            "full": "Zappy réunit trois programmes : un serveur en C, une interface graphique 3D en C++ et des clients IA autonomes. Les IA collectent des ressources et accomplissent des rituels pour monter en niveau ; la première équipe à faire atteindre le niveau 8 à six joueurs gagne. Dans l'équipe de quatre, j'ai écrit le client IA en Python (protocole, stratégie, coordination de l'équipe par messages) et la partie réseau de l'interface graphique.",
             "highlights": [
-                "Trois programmes : serveur en C, interface graphique en C++, IA en Python",
-                "Serveur gérant de nombreux clients simultanés par sockets",
-                "IA autonome : collecte, reproduction et rituels de montée de niveau",
-                "Visualisation de la partie en temps réel"
-            ]
+                "Ma part : client IA autonome en Python",
+                "Coordination des joueurs par messages pour les rituels",
+                "Partie réseau de l'interface graphique",
+                "Projet en équipe de quatre"
+            ],
+            "imageCaption": "Extrait du client IA"
         },
-        "pulsar": {
-            "short": "Moteur de jeu modulaire en C++ sur Vulkan, avec son propre langage de script en Rust et un éditeur visuel en C#.",
-            "full": "Pulsar est un moteur de jeu modulaire développé en C++ avec l’API graphique Vulkan, conçu pour afficher efficacement des scènes 2D et 2.5D. Il s’intègre avec Neutron, un langage de script personnalisé écrit en Rust, rendant le développement de jeux à la fois accessible et expressif. Le moteur est accompagné d’un éditeur visuel en C# permettant de construire des scènes, gérer les assets et connecter les scripts de manière intuitive. Pulsar vise à offrir un environnement de développement moderne et pédagogique, avec rendu accéléré par GPU et compatibilité multiplateforme. Les dépôts de l’éditeur, du moteur et du langage sont publics mais pas encore open source, car le projet est toujours en développement.",
+        "raytracer": {
+            "short": "Moteur de rendu par lancer de rayons en C++. Commencé à trois à Epitech, où j'ai écrit le parseur de scènes et la fabrique d'objets, puis terminé seul.",
+            "full": "Le raytracer génère une image à partir d'un fichier de scène (libconfig++) : sphères, plans, cylindres et cônes, translations et rotations, lumières ambiante, directionnelle et ponctuelle, ombrage de Phong, ombres portées et réflexions. Le rendu est réparti sur tous les cœurs du processeur et lissé par suréchantillonnage. Le projet a été commencé en équipe de trois en 2023 (j'y ai écrit le parseur de scènes et la fabrique d'objets), puis je l'ai repris et terminé seul.",
             "highlights": [
-                "Rendu 2D / 2.5D accéléré par GPU avec l’API Vulkan",
-                "Neutron, un langage de script conçu et écrit en Rust",
-                "Éditeur visuel en C# : scènes, assets et scripts",
-                "Conçu pour être multiplateforme"
-            ]
-        },
-        "subtitle": "Une sélection de projets systèmes, graphiques et réseau.",
-        "wip": "En cours",
-        "private": "Dépôt pas encore ouvert",
-        "code": "Code source"
+                "Parseur de scènes et fabrique d'objets",
+                "Sphères, plans, cylindres, cônes, transformations",
+                "Ombrage de Phong, ombres et réflexions",
+                "Rendu multithreadé avec antialiasing"
+            ],
+            "imageCaption": "Rendu de la scène de démo"
+        }
     },
     "contact": {
         "title": "Contact",
-        "text": "Un projet, un stage, un poste ? Écrivez-moi sur LinkedIn ou jetez un œil à mon code sur GitHub."
+        "text": "Un poste, une mission ? Écrivez-moi sur LinkedIn ou jetez un œil à mon code sur GitHub."
     },
     "navbar": {
         "hero": "Accueil",
         "projects": "Projets",
         "contact": "Contact",
         "about": "À propos",
-        "skills": "Compétences"
+        "skills": "Compétences",
+        "experience": "Expérience"
     },
     "footer": {
         "text": "Tous droits réservés."
     },
     "about": {
         "title": "À propos",
-        "p1": "Formé à Epitech, j'aime comprendre ce qui se passe sous le capot : comment une image est calculée pixel par pixel, comment des dizaines de clients restent synchronisés sur un réseau, comment répartir un calcul sur tous les cœurs d'une machine.",
-        "p2": "Mes projets vont du moteur de jeu Vulkan doté de son propre langage de script au raytracer multithreadé, en passant par des serveurs de jeu en réseau et une IA de Gomoku. Je soigne autant l'architecture que la performance : code modulaire, protocoles documentés, plugins chargés dynamiquement.",
+        "p1": "Développeur formé à Epitech, je travaille aussi bien sur des applications web et mobiles que sur du code bas niveau. J'ai conçu et publié une application mobile en production, sécurisé un parc de plusieurs centaines de sites et migré des hébergements complets entre serveurs.",
+        "p2": "Côté projets, j'ai écrit l'interpréteur d'un langage de script en Rust et je me forme en autodidacte à l'informatique quantique. J'aime comprendre ce qui se passe sous le capot et livrer un code propre et testé.",
         "cv": "Télécharger mon CV"
     },
     "skills": {
         "title": "Compétences",
         "languages": "Langages",
-        "graphics": "Rendu et moteurs de jeu",
-        "systems": "Systèmes et réseau",
-        "tools": "Outils et web",
+        "systems": "Bas niveau et outils",
         "items": {
-            "raytracing": "Ray tracing",
-            "engine": "Architecture de moteur",
-            "procedural": "Textures procédurales",
-            "sockets": "Sockets",
-            "protocols": "Protocoles binaires",
+            "sockets": "Programmation réseau",
             "multithreading": "Multithreading",
-            "plugins": "Plugins dynamiques (.so)",
-            "patterns": "Patrons de conception"
+            "patterns": "Patrons de conception",
+            "rest": "API REST",
+            "compilers": "Compilation et interprétation",
+            "ai": "Outils de développement IA",
+            "noise": "Modèles de bruit"
+        },
+        "web": "Web et mobile",
+        "data": "Données et serveurs",
+        "quantum": "Informatique quantique"
+    },
+    "experience": {
+        "title": "Expérience",
+        "subtitle": "Ce que j'ai mis en pratique en entreprise.",
+        "fullstack": {
+            "title": "Développement full stack",
+            "items": [
+                "Conception et publication d'une application mobile et web (TypeScript, Expo)",
+                "Sites WordPress livrés de la maquette à la mise en ligne",
+                "CMS sur mesure en PHP et bases de données SQL",
+                "Intégration d'assistants IA dans la production : capacité de l'équipe multipliée par trois"
+            ]
+        },
+        "security": {
+            "title": "Sécurité web",
+            "items": [
+                "Audit d'un parc de plus de 300 sites WordPress répartis sur plusieurs serveurs",
+                "Correction de la quasi-totalité des vulnérabilités relevées",
+                "Réponse à une intrusion : point d'entrée identifié, sites nettoyés, faille corrigée sur tout le parc"
+            ]
+        },
+        "servers": {
+            "title": "Administration de serveurs",
+            "items": [
+                "Migration de comptes d'hébergement vers de nouveaux serveurs (WHM, cPanel)",
+                "Transfert des fichiers, bases de données, DNS, courriels et certificats"
+            ]
+        },
+        "management": {
+            "title": "Gestion de projet",
+            "items": [
+                "Rédaction de cahiers des charges et suivi de projets",
+                "Liaison entre clients et développeurs",
+                "Coordination d'une équipe de six personnes en méthode agile"
+            ]
         }
     }
 }
