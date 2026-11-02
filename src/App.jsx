@@ -19,6 +19,15 @@ function App() {
   const { t } = useTranslation();
 
   useEffect(() => {
+    if (typeof window !== "undefined" && window.console) {
+      console.log(
+        "%c💌 Ce message est destiné à celle qui partage ma vie, je t'aime plus que tout, merci de toujours me tirer vers le haut. -A",
+        "color: pink; font-size: 16px; font-style: italic;"
+      );
+    }
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
 
